@@ -73,7 +73,7 @@ h1 {
   width: 550px;
 }
 
-h3 {
+#card-web-title {
   margin-bottom: 2px;
   margin-top: 2px;
   padding: 10px;
@@ -107,6 +107,8 @@ h3 {
 
 .read-delete {
   color: #455A64;
+  background-color: #FFFFFF;
+  border: none;
   text-decoration: underline;
   text-decoration-color: #F2F4F4;
 }
