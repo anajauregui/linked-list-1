@@ -9,41 +9,25 @@ var cardWebUrl = document.getElementById('card-web-link');
 var cardStack = document.getElementById('bookmarks');
 
 
-// enter.addEventListener('click', function(){
-//   var webTitleValue = webTitle.value;
-//   webTitle.innerText = webTitleValue;
-//   cardWebTitle.innerText = webTitleValue;
-//
-//   var webUrlValue = webUrl.value;
-//   webUrl.innerText = webUrlValue;
-//   cardWebUrl.innerText = webUrlValue;
-//
-//   console.log("hi");
 
-// })
 enter.addEventListener('click', function(){
   createBookmark();
 })
 
 function createBookmark() {
-  var newBookmark = document.createElement('article');
-
   var webTitleValue = webTitle.value;
-  webTitle.innerText = webTitleValue;
-  cardWebTitle.innerText = webTitleValue;
-
   var webUrlValue = webUrl.value;
-  webUrl.innerText = webUrlValue;
-  cardWebUrl.innerText = webUrlValue;
+  var newBookmark = document.createElement('article');
+  newBookmark.setAttribute('id', webTitleValue);
+  cardStack.appendChild(newBookmark)
+  var webCard = document.getElementById(webTitleValue)
 
-newBookmark.innerHTML =
-'<article class="web-cards">' +
-  '<h3 id="card-web-title">' + webTitleValue + '</h3>'+
-  '<hr id="hr1">' +
-  '<a id="card-web-link" class="links" href="#">' + webUrlValue + '</a>' +
-  '<hr id="hr2">' +
-  '<button id="read-link" class="read-delete" type="button">Read</button>' +
-  '<button id="delete-link" class="read-delete" type="button">Delete</button>' +
-'</article>'
-bookmarks.appendChild(newBookmark)
+  webCard.innerHTML = `<article class="web-cards">
+    <h3 id="card-web-title">  ${webTitleValue}  </h3>
+    <hr id="hr1">
+    <a id="card-web-link" class="links" href="#">  ${webUrlValue}  </a>
+    <hr id="hr2">
+    <button id="read-link" class="read-delete" type="button">Read</button>
+    <button id="delete-link" class="read-delete" type="button">Delete</button>
+  </article>`
 }
