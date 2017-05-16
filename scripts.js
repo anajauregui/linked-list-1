@@ -23,11 +23,16 @@ function createBookmark() {
   var webCard = document.getElementById(webTitleValue)
 
   webCard.innerHTML = `<article class="web-cards">
-    <h3 id="card-web-title">  ${webTitleValue}  </h3>
+    <h3 class="card-web-title">  ${webTitleValue}  </h3>
     <hr id="hr1">
     <a id="card-web-link" class="links" href="#">  ${webUrlValue}  </a>
     <hr id="hr2">
-    <button id="read-link" class="read-delete" type="button">Read</button>
+    <button id="read-link" class="read-delete read-button" type="button">Read</button>
     <button id="delete-link" class="read-delete" type="button">Delete</button>
   </article>`
 }
+
+$('.card-stack').on('click', 'button.read-button', function(){
+  $(this).toggleClass('read');
+  $(this).parent().css('backgroundColor', '#f2f4f4');
+})
