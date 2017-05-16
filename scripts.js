@@ -7,10 +7,33 @@ var deleteCard = document.getElementById('delete-link');
 var cardWebTitle = document.getElementById('card-web-title');
 var cardWebUrl = document.getElementById('card-web-link');
 var cardStack = document.getElementById('bookmarks');
+var inputFields = document.querySelectorAll('.web-inputs');
 
+
+// function inputComplete() {
+//   if (webTitle.value === "" || webUrl.value === "") {
+//     // alert("Please complete all input fields")
+//     } else {
+//       createBookmark();
+//     }
+//   }
+
+inputFields.addEventListener('input', function(){
+  enableEnterButton();
+})
+
+function enableEnterButton() {
+  if (inputFields === '') {
+    alert("Please complete all input fields");
+    enter.disabled = true;
+  } else {
+    enter.disabled = false;
+  }
+}
 
 
 enter.addEventListener('click', function(){
+  // inputComplete();
   createBookmark();
 })
 
@@ -28,11 +51,16 @@ function createBookmark() {
     <a id="card-web-link" class="links" href="#">  ${webUrlValue}  </a>
     <hr id="hr2">
     <button id="read-link" class="read-delete read-button" type="button">Read</button>
-    <button id="delete-link" class="read-delete" type="button">Delete</button>
+    <button id="delete-link" class="read-delete delete-button" type="button">Delete</button>
   </article>`
 }
 
 $('.card-stack').on('click', 'button.read-button', function(){
   $(this).toggleClass('read');
   $(this).parent().css('backgroundColor', '#f2f4f4');
+})
+
+$('.card-stack').on('click', 'button.delete-button', function(){
+  $('.web-cards').remove();
+  console.log("click");
 })
