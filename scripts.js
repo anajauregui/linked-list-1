@@ -7,34 +7,36 @@ var deleteCard = document.getElementById('delete-link');
 var cardWebTitle = document.getElementById('card-web-title');
 var cardWebUrl = document.getElementById('card-web-link');
 var cardStack = document.getElementById('bookmarks');
-var inputFields = document.querySelectorAll('.web-inputs');
 
 
-// function inputComplete() {
-//   if (webTitle.value === "" || webUrl.value === "") {
-//     // alert("Please complete all input fields")
-//     } else {
-//       createBookmark();
-//     }
-//   }
 
-inputFields.addEventListener('input', function(){
-  enableEnterButton();
-})
+////CODE RE-WORKED, ENTER BUTTON NOW FUNCTIONAL TO BE DISABLED.
+function enableButton() {
+  var title = $('#web-title').val();
+  var url = $('#web-url').val();
 
-function enableEnterButton() {
-  if (inputFields === '') {
-    alert("Please complete all input fields");
-    enter.disabled = true;
-  } else {
-    enter.disabled = false;
+  if(title !== "" || url !== "") {
+    $('#enter').prop('disabled', false);
+  } else if(title === "" || url === "") {
+    $('#enter').prop('disabled', true);
   }
 }
+$('#web-title, #web-url').on('input', enableButton);
 
-
+////<<<<THIS IS NECESSARY TO PROPERLY RUN OUR CODE- UNTIL WE REWORK THE ENTER DISABLE BUTTON>>>>>>>>>>>>>>>
+function inputComplete() {
+  if (webTitle.value === "" || webUrl.value === "") {
+    alert("Please complete all input fields")
+  } else {
+    createBookmark();
+  }
+}
+//// Added lines 37, 38 to clear fields upon bookmark creation.
 enter.addEventListener('click', function(){
-  // inputComplete();
-  createBookmark();
+  inputComplete();
+  webTitle.value = '';
+  webUrl.value = ''
+  enableButton();
 })
 
 function createBookmark() {
@@ -55,12 +57,13 @@ function createBookmark() {
   </article>`
 }
 
+////When .read has been added document.createElement('button') at the top of the bookmarks section to clear all read bookmarks. this should be accomplished with .remove() of all cards with the class of .read
+
 $('.card-stack').on('click', 'button.read-button', function(){
   $(this).toggleClass('read');
-  $(this).parent().css('backgroundColor', '#f2f4f4');
+  $(this).parent().toggleClass('backgroundColor');
 })
 
 $('.card-stack').on('click', 'button.delete-button', function(){
   $('.web-cards').remove();
-  console.log("click");
 })
