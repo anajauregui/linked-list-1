@@ -56,7 +56,7 @@ font-weight: 400;
 padding-left: 10px;
 }
 
-#enter {
+.enter-read-buttons {
   background-color: #FFC107;
   border: none;
   color: #FFFFFF;
@@ -68,19 +68,18 @@ padding-left: 10px;
   width: 90%;
 }
 
-#enter:hover {
+.enter-read-buttons:hover {
   background-color: #FFD773;
 }
 
-#enter:disabled {
+.enter-read-buttons:disabled {
   background-color: #FFD773;
 }
 
 .card-stack {
   background-color: #CFD8DC;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   min-height: 1000px;
   width: 50%;
 }
@@ -161,6 +160,20 @@ padding-left: 22px;
 #delete-link {
   float: right;
   margin-right: 15px;
+}
+
+.class {
+  height: 200px;
+  width: 100%;
+
+}
+
+.counter-title {
+  text-align: center;
+}
+
+.counter-text {
+  text-align: center;
 }
 
 @media screen and (max-width:1300px) {
