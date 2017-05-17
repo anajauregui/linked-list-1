@@ -10,26 +10,28 @@ var cardStack = document.getElementById('bookmarks');
 var inputFields = document.querySelectorAll('.web-inputs');
 
 
-// function inputComplete() {
-//   if (webTitle.value === "" || webUrl.value === "") {
-//     // alert("Please complete all input fields")
-//     } else {
-//       createBookmark();
-//     }
-//   }
+function inputComplete() {
+  if (webTitle.value === "" || webUrl.value === "") {
+    // alert("Please complete all input fields")
+    } else {
+      createBookmark();
+    }
+  }
 
 inputFields.addEventListener('input', function(){
   enableEnterButton();
 })
 
-function enableEnterButton() {
-  if (inputFields === '') {
+
+
+ function enableEnterButton() {
+   if (inputFields === '') {
     alert("Please complete all input fields");
-    enter.disabled = true;
-  } else {
+   enter.disabled = true;
+   } else {
     enter.disabled = false;
-  }
-}
+   }
+ }
 
 
 enter.addEventListener('click', function(){
