@@ -10,7 +10,6 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-
 }
 
 h1 {
@@ -126,9 +125,6 @@ h1 {
 
 }
 
-.backgroundColor {
-  background-color: #F2F4F4;
-}
 /*#card-web-link.read {
   text-decoration: underline;
   text-decoration-color: #CFD8DC;

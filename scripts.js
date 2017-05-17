@@ -14,10 +14,10 @@ var cardStack = document.getElementById('bookmarks');
 function enableButton() {
   var title = $('#web-title').val();
   var url = $('#web-url').val();
+
   if(title !== "" || url !== "") {
     $('#enter').prop('disabled', false);
-  }
-  else if(title === "" || url === "") {
+  } else if(title === "" || url === "") {
     $('#enter').prop('disabled', true);
   }
 }
@@ -56,6 +56,8 @@ function createBookmark() {
     <button id="delete-link" class="read-delete delete-button" type="button">Delete</button>
   </article>`
 }
+
+////When .read has been added document.createElement('button') at the top of the bookmarks section to clear all read bookmarks. this should be accomplished with .remove() of all cards with the class of .read
 
 $('.card-stack').on('click', 'button.read-button', function(){
   $(this).toggleClass('read');
