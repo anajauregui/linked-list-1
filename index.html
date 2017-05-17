@@ -15,12 +15,25 @@
         <h1>Linked <span><img class="linked-list-svg" src="assets/linked-list-logo.svg" alt="logo"></span> List</h1>
         <div class="form-div">
           <input class="web-inputs" id="web-title" type="text" placeholder="Website Title">
-          <input class="web-inputs" id="web-url" type="url"  name="Website URL" placeholder="Website URL">
-          <button id="enter" type="button" name="button" >Enter</button>
-        </div>
+
+          <input class="web-inputs" id="web-url" type="url" required name="Website URL" placeholder="Website URL">
+
+          <button id="enter"
+          class="enter-read-buttons" type="button" name="button" >Enter</button>
+
+          <button id="clear-read" class="enter-read-buttons" type="button" name="button" >Clear Read Bookmarks</button>
+
+          <div class="counter">
+
+            <h3 class="counter-title">Total Saved Book Marks</h3>
+            <p class="total-bookmark-counter counter-text">""</p>
+
+            <h3 class="counter-title">Total Bookmarks Read</h3>
+            <p class="total-read counter-text">""</p>
+
+          </div>
       </form>
     </section>
-
     <section id="bookmarks" class="card-stack">
        <!-- <article class="web-cards">
         <h3 class="card-web-title">The Website Title</h3>

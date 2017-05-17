@@ -7,6 +7,8 @@ var deleteCard = document.getElementById('delete-link');
 var cardWebTitle = document.getElementById('card-web-title');
 var cardWebUrl = document.getElementById('card-web-link');
 var cardStack = document.getElementById('bookmarks');
+var webTitleValue = webTitle.value;
+var webUrlValue = webUrl.value;
 
 
 ////CODE RE-WORKED, ENTER BUTTON NOW FUNCTIONAL TO BE DISABLED.
@@ -79,6 +81,28 @@ $('.card-stack').on('click', 'button.read-button', function(){
   $(this).parent().toggleClass('backgroundColor');
 })
 
+
 $('.card-stack').on('click', 'button.delete-button', function(){
   $(this).parents('.web-cards').remove();
 })
+
+
+// URL Verifier
+function isUrlValid() {
+    var userInput = $('#web-url').val()
+    var regexQuery = "^(https?://)?(www\\.)?([-a-z0-9]{1,63}\\.)*?[a-z0-9][-a-z0-9]{0,61}[a-z0-9]\\.[a-z]{2,6}(/[-\\w@\\+\\.~#\\?&/=%]*)?$";
+    var url = new RegExp(regexQuery,"i");
+    if (url.test(userInput)) {
+      buildNewCard();
+      linksCounter();
+      reset();
+    }
+    else {alert('invalid url: ' + userInput);
+    return false;
+  }
+}
+
+// function linkCounter()  {
+//   var linkCount = $('.web-cards').length;
+//   $('.link-display').text('Links: ' + linkCount);
+// }
