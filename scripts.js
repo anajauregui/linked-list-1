@@ -8,8 +8,6 @@ var cardWebTitle = document.getElementById('card-web-title');
 var cardWebUrl = document.getElementById('card-web-link');
 var cardStack = document.getElementById('bookmarks');
 
-
-
 ////CODE RE-WORKED, ENTER BUTTON NOW FUNCTIONAL TO BE DISABLED.
 function enableButton() {
   var title = $('#web-title').val();
@@ -22,6 +20,7 @@ function enableButton() {
   }
 }
 $('#web-title, #web-url').on('input', enableButton);
+
 
 ////<<<<THIS IS NECESSARY TO PROPERLY RUN OUR CODE- UNTIL WE REWORK THE ENTER DISABLE BUTTON>>>>>>>>>>>>>>>
 function inputComplete() {
