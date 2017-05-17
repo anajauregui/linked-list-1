@@ -49,6 +49,14 @@ h1 {
   padding-top: 10px;
 }
 
+/*#web-url.invalid {
+	border: 2px solid red;
+}
+
+#web-url.valid {
+	border: 2px solid green;
+}*/
+
 .web-inputs::-webkit-input-placeholder {
 color: #CFD8DC;
 font-size: 24px;
