@@ -49,6 +49,14 @@ h1 {
   padding-top: 10px;
 }
 
+/*#web-url.invalid {
+	border: 2px solid red;
+}
+
+#web-url.valid {
+	border: 2px solid green;
+}*/
+
 .web-inputs::-webkit-input-placeholder {
 color: #CFD8DC;
 font-size: 24px;
@@ -79,8 +87,7 @@ padding-left: 10px;
 .card-stack {
   background-color: #CFD8DC;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   min-height: 1000px;
   width: 50%;
 }
