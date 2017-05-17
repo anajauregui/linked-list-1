@@ -53,21 +53,19 @@ enter.addEventListener('click', function(){
   webTitle.value = '';
   webUrl.value = ''
   enableButton();
+  bookmarkCounter();
 })
 
 function createBookmark() {
-  var webTitleValue = webTitle.value;
-  var webUrlValue = webUrl.value;
-  var hrefValue = document.getElementById('web-url').href = "webUrlValue.innerText";
   var newBookmark = document.createElement('article');
-  newBookmark.setAttribute('id', webTitleValue);
+  newBookmark.setAttribute('id', webTitle.value);
   cardStack.appendChild(newBookmark);
-  var webCard = document.getElementById(webTitleValue);
+  var webCard = document.getElementById(webTitle.value);
 
   webCard.innerHTML = `<article class="web-cards">
-    <h3 class="card-web-title">  ${webTitleValue}  </h3>
+    <h3 class="card-web-title">  ${webTitle.value}  </h3>
     <hr id="hr1">
-    <a id="card-web-link" class="links" href="hrefValue">  ${webUrlValue}  </a>
+    <a id="card-web-link" class="links" href="${"http://" + webUrl.value}">  ${webUrl.value}  </a>
     <hr id="hr2">
     <button id="read-link" class="read-delete read-button" type="button">Read</button>
     <button id="delete-link" class="read-delete delete-button" type="button">Delete</button>
@@ -76,33 +74,33 @@ function createBookmark() {
 
 ////When .read has been added document.createElement('button') at the top of the bookmarks section to clear all read bookmarks. this should be accomplished with .remove() of all cards with the class of .read
 
-$('.card-stack').on('click', 'button.read-button', function(){
+$('.card-stack')
+  .on('click', 'button.read-button', toggleReadCards)
+  .on('click', 'button.delete-button', removeCards);
+
+$('#clear-read').on('click', function(){
+  $('.read').parent().remove();
+})
+
+function toggleReadCards() {
   $(this).toggleClass('read');
   $(this).parent().toggleClass('backgroundColor');
-})
-
-
-$('.card-stack').on('click', 'button.delete-button', function(){
-  $(this).parents('.web-cards').remove();
-})
-
-
-// URL Verifier
-function isUrlValid() {
-    var userInput = $('#web-url').val()
-    var regexQuery = "^(https?://)?(www\\.)?([-a-z0-9]{1,63}\\.)*?[a-z0-9][-a-z0-9]{0,61}[a-z0-9]\\.[a-z]{2,6}(/[-\\w@\\+\\.~#\\?&/=%]*)?$";
-    var url = new RegExp(regexQuery,"i");
-    if (url.test(userInput)) {
-      buildNewCard();
-      linksCounter();
-      reset();
-    }
-    else {alert('invalid url: ' + userInput);
-    return false;
-  }
+  $('#clear-read').prop('disabled', false);
+  readBookmarks();
 }
 
-// function linkCounter()  {
-//   var linkCount = $('.web-cards').length;
-//   $('.link-display').text('Links: ' + linkCount);
-// }
+function removeCards() {
+  $(this).parents('.web-cards').remove();
+  bookmarkCounter();
+  readBookmarks();
+}
+
+function bookmarkCounter()  {
+   var $bookmarkCount = $('.web-cards').length;
+   $('.total-bookmark-counter').text($bookmarkCount);
+ }
+
+function readBookmarks() {
+  var $readBookmarks = $('.read').length;
+  $('.total-read').text($readBookmarks);
+}

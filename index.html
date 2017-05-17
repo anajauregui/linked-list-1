@@ -16,22 +16,21 @@
         <div class="form-div">
           <input class="web-inputs" id="web-title" type="text" placeholder="Website Title">
 
-          <input class="web-inputs" id="web-url" type="url" required name="Website URL" placeholder="Website URL">
+          <input class="web-inputs" id="web-url" type="url" required name="Website URL"  placeholder="Website URL">
 
           <button id="enter"
-          class="enter-read-buttons" type="button" name="button" >Enter</button>
+          class="enter-read-buttons" type="button" name="button" disabled="true" >Enter</button>
 
-          <button id="clear-read" class="enter-read-buttons" type="button" name="button" >Clear Read Bookmarks</button>
+          <button id="clear-read" class="enter-read-buttons" type="button" name="button" disabled="true" >Clear Read Bookmarks</button>
+        </div>
 
-          <div class="counter">
+        <div class="counter">
+          <h3 class="counter-title">Total Saved Book Marks</h3>
+          <p class="total-bookmark-counter counter-text">0</p>
 
-            <h3 class="counter-title">Total Saved Book Marks</h3>
-            <p class="total-bookmark-counter counter-text">""</p>
-
-            <h3 class="counter-title">Total Bookmarks Read</h3>
-            <p class="total-read counter-text">""</p>
-
-          </div>
+          <h3 class="counter-title">Total Bookmarks Read</h3>
+          <p class="total-read counter-text">0</p>
+        </div>
       </form>
     </section>
     <section id="bookmarks" class="card-stack">
