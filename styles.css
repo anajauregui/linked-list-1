@@ -28,12 +28,12 @@ h1 {
   color: #FFFFFF;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   min-height: 1000px;
   width: 50%;
-  justify-content: center;
 }
 
-.web-info{
+.web-info {
   margin-bottom: 200px;
   margin-top: 200px;
 }
@@ -46,15 +46,15 @@ h1 {
   margin-bottom: 50px;
   margin-top: 50px;
   outline: none;
-  width: 90%;
   padding-top: 10px;
+  width: 90%;
 }
 
 .web-inputs::-webkit-input-placeholder {
-color: #CFD8DC;
-font-size: 24px;
-font-weight: 400;
-padding-left: 10px;
+  color: #CFD8DC;
+  font-size: 24px;
+  font-weight: 400;
+  padding-left: 10px;
 }
 
 .enter-read-buttons {
@@ -121,7 +121,7 @@ padding-left: 10px;
   color: #607D8B;
   padding: 15px 22px;
   text-decoration: underline;
-  text-decoration-color: #F2F4F4;
+  text-decoration-color: #CFD8DC;
 }
 
 .links:hover {
@@ -130,11 +130,11 @@ padding-left: 10px;
 }
 
 .read-delete {
-  color: #455A64;
   background: none;
   border: none;
+  color: #455A64;
   text-decoration: underline;
-  text-decoration-color: #F2F4F4;
+  text-decoration-color: #CFD8DC;
 }
 
 .read-delete:hover {
@@ -150,14 +150,13 @@ padding-left: 10px;
   background-color: #F2F4F4;
 }
 
-/*#card-web-link.read {
+.text-decoration {
   text-decoration: underline;
-  text-decoration-color: #CFD8DC;
-}*/
+  text-decoration-color: #F2F4F4;
+}
 
 #read-link {
-padding-left: 22px;
-
+  padding-left: 22px;
 }
 
 #delete-link {
@@ -168,7 +167,6 @@ padding-left: 22px;
 .class {
   height: 200px;
   width: 100%;
-
 }
 
 .counter-title {
@@ -225,6 +223,7 @@ padding-left: 22px;
   .web-cards {
     width: 90%;
   }
+
   .web-info {
     margin:0;
   }
@@ -232,8 +231,6 @@ padding-left: 22px;
   .web-card-title, .links, #read-link {
     padding-left: 25px;
   }
-
-}
 
 @media screen and (max-width:575px) {
   .web-info-entry {
@@ -243,6 +240,7 @@ padding-left: 22px;
   h1 {
     font-size: 45px;
   }
+
   .linked-list-svg {
     width: 12%;
   }
@@ -251,8 +249,6 @@ padding-left: 22px;
     margin-top: 30px;
     margin-bottom: 30px;
   }
-
-}
 
 @media screen and (max-width:575px) {
   h1 {
